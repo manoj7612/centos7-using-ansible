@@ -1,0 +1,19 @@
+---
+   - name: Ping destination servers
+     import_playbook: ping_servers.yml
+
+   - name: Install Common Packages in Centos 7.8
+     import_playbook: install_common_packages.yml
+
+   - name: Install CPAN modules
+     import_playbook: install_cpan_modules.yml
+
+   - name: Install Apache Webserver
+     import_playbook: install_apache.yml
+
+   - name: Install Nginx Webserver
+     import_playbook: install_nginx.yml
+
+   - name: Install MySQL server
+     import_playbook: install_mysql.yml
+

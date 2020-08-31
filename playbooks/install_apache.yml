@@ -1,0 +1,19 @@
+---
+- hosts: servers
+  remote_user: root
+
+  tasks:
+   - name: Install Apache
+     yum: 
+         name: httpd
+         state: latest
+         
+   - name: Copy the index.html file in DOCUMENTROOT
+     template: src=/etc/ansible/httpd/index.html dest=/var/www/html owner=apache group=apache mode=0644
+
+   - name: Enable http.service to run on boot
+     service: name=httpd enabled=yes
+
+     notify:
+     - start apache
+

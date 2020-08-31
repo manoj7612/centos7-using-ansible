@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  remote_user: root
+
+  tasks: 
+      - name: Ping destination servers
+        action: ping
+   
+      - debug: msg="Success"

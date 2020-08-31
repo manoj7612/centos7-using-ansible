@@ -1,0 +1,62 @@
+---
+- hosts: servers
+  remote_user: root
+  become: yes
+  become_method: su
+
+  tasks:
+   - name: Install CGI 
+     command: cpan install CGI
+
+   - name: Install Template::Toolkit 
+     command: cpan install Template::Toolkit
+
+   - name: Install Net::LDAPS
+     command: cpan install Net::LDAPS
+
+   - name: Install Log::Log4perl
+     command: cpan install Log::Log4perl
+
+   - name: Install Crypt::CBC
+     command: cpan install Crypt::CBC
+
+   - name: Install Crypt::Cipher::AES
+     command: cpan install Crypt::Cipher::AES
+
+   - name: Install JSON
+     command: cpan install JSON
+
+   - name: Install JSON::XS
+     command: cpan install JSON::XS
+
+   - name: Install Unicode::MapUTF8
+     command: cpan install Unicode::MapUTF8
+
+   - name: Install DBI
+     command: cpan install DBI
+
+   - name: Install Crypt::DES 
+     command: cpan install Crypt::DES
+
+   - name: Install Search::Elasticsearch 
+     command: cpan install Search::Elasticsearch
+
+   - name: Install Data::Dumper::Names
+     command: cpan install Data::Dumper::Names
+
+   - name: Install File::Basename
+     command: cpan force install File::Basename
+
+   - name: Install IO::File
+     command: cpan install IO::File
+
+   - name: Install Perl Dancer2 Framework
+     command: cpan install Dancer2
+
+   - name: Install Dancer2::Logger::Log4perl
+     command: cpan install Dancer2::Logger::Log4perl
+
+   - name: Install Dancer2::Plugin::Auth::Extensible
+     command: cpan install Dancer2::Plugin::Auth::Extensible
+
+

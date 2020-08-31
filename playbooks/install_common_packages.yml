@@ -1,0 +1,133 @@
+---
+- hosts: servers
+  remote_user: root
+  become: yes
+  become_method: su
+
+  tasks:
+   - name: Install Development tools
+     yum: 
+         state: present
+         name: 
+            - "@Development tools"
+
+   - name: Install GNOME Desktop Environment
+     yum: 
+         state: present
+         name: 
+            - "@^gnome-desktop-environment"
+
+   - name: Install perl
+     yum: 
+         state: present
+         name: 
+            - "perl"
+
+   - name: Install perl-devel
+     yum: 
+         state: present
+         name: 
+            - "perl-devel"
+
+   - name: Install perl-CPAN
+     yum: 
+         state: present
+         name: 
+            - "perl-CPAN" 
+
+   - name: Install perl-CGI
+     yum: 
+         state: present
+         name: 
+            - "perl-CGI"
+
+   - name: Install perl-DBD-mysql
+     yum: 
+         state: present
+         name: 
+            - "perl-DBD-mysql"
+
+   - name: Install dos2unix
+     yum: 
+         state: present
+         name: 
+            - "dos2unix"
+
+   - name: Install sssd
+     yum: 
+         state: present
+         name: 
+            - "sssd"
+
+   - name: Install realmd
+     yum: 
+         state: present
+         name: 
+            - "realmd"
+
+   - name: Install oddjob
+     yum: 
+         state: present
+         name: 
+            - "oddjob"
+
+   - name: Install oddjob-mkhomedir
+     yum: 
+         state: present
+         name: 
+            - "oddjob-mkhomedir"
+
+   - name: Install adcli
+     yum: 
+         state: present
+         name: 
+            - "adcli"
+
+   - name: Install samba-common
+     yum: 
+         state: present
+         name: 
+            - "samba-common"
+
+   - name: Install samba-common-tools
+     yum: 
+         state: present
+         name: 
+            - "samba-common-tools"
+
+   - name: Install krb5-workstation
+     yum: 
+         state: present
+         name: 
+            - "krb5-workstation"
+
+   - name: Install openldap-clients
+     yum: 
+         state: present
+         name: 
+            - "openldap-clients"
+
+   - name: Install policycoreutils-python
+     yum: 
+         state: present
+         name: 
+            - "policycoreutils-python"
+
+   - name: Install authconfig
+     yum: 
+         state: present
+         name: 
+            - "authconfig"
+
+   - name: Install mod_auth_kerb
+     yum: 
+         state: present
+         name: 
+            - "mod_auth_kerb"
+
+   - name: Install perl-App-cpanminus
+     yum: 
+         state: present
+         name: 
+            - "perl-App-cpanminus"
+

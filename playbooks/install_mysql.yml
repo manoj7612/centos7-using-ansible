@@ -1,0 +1,18 @@
+---
+   - hosts: servers
+     remote_user: root
+
+     tasks:
+      - name: Download rpm from the following url
+        get_url:
+         url: https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+         dest: /usr/local/src
+
+      - name: Install the rpm package downloaded from the above url
+        yum:
+         name: /usr/local/src/mysql80-community-release-el7-3.noarch.rpm
+         state: present
+
+
+      - name: Install MySQL
+        yum: name=mysql-server state=installed

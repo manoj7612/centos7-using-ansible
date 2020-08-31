@@ -1,0 +1,24 @@
+---
+- hosts: servers
+  remote_user: root
+
+  tasks:
+   - name: Add epel-release repository
+     yum:
+         name: epel-release
+         state: present
+
+   - name: Install nginx
+     yum: 
+         name: nginx
+         state: latest
+         
+   - name: Copy the index.html file in DOCUMENTROOT
+     template: src=/etc/ansible/nginx/index.html dest=/usr/share/nginx/html owner=nginx group=nginx mode=0644
+
+   - name: Enable nginx.service to run on boot
+     service: name=nginx enabled=yes
+
+     notify:
+     - start nginx
+
