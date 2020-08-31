@@ -22,3 +22,7 @@
      notify:
      - start nginx
 
+  handlers:
+     - name: start nginx
+       service: name=nginx state=restarted
+
